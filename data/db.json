@@ -1,10 +1,11 @@
 {
   "ids": {
-    "Post": 2
+    "Post": 3
   },
   "models": {
     "Post": {
-      "1": "{\"title\":\"Test\",\"content\":\"Test ...\",\"id\":1}"
+      "1": "{\"title\":\"Test\",\"content\":\"Test ...\",\"id\":1}",
+      "2": "{\"title\":\"string\",\"content\":\"string\",\"id\":2}"
     }
   }
 }

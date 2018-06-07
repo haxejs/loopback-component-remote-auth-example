@@ -1,7 +1,7 @@
 {
   "ids": {
     "User": 3,
-    "AccessToken": 1,
+    "AccessToken": 2,
     "ACL": 2,
     "RoleMapping": 3,
     "Role": 3
@@ -12,6 +12,7 @@
       "2": "{\"username\":\"user\",\"password\":\"$2a$10$JoiObqwshlE8ZnMeZuw2yuLJdm1/ontkHZ4R7Dl11YfH.j98q5WFG\",\"email\":\"user@user.com\",\"firstName\":\"Guest\",\"lastName\":\"User\",\"id\":2}"
     },
     "AccessToken": {
+      "M4sACz3Ci32fIPdBf1rRYdNkCqJbHxB4PHV7VLIDxREEAmxbBKEoXxbdzuqCIJit": "{\"id\":\"M4sACz3Ci32fIPdBf1rRYdNkCqJbHxB4PHV7VLIDxREEAmxbBKEoXxbdzuqCIJit\",\"ttl\":1209600,\"created\":\"2018-06-07T11:01:28.432Z\",\"userId\":1}"
     },
     "ACL": {
       "1": "{\"model\" : \"AccessToken\",\"property\": \"findById\",\"accessType\": \"READ\",\"principalType\": \"ROLE\",\"principalId\": \"$owner\",\"permission\": \"ALLOW\"}"

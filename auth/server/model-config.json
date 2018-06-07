@@ -32,5 +32,9 @@
   "Role": {
     "dataSource": "db",
     "public": true
+  },
+  "Post": {
+    "dataSource": "data-api",
+    "public": true
   }
 }

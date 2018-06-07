@@ -5,5 +5,8 @@
     "scripts": {
         "preinstall": "cd auth && npm install -d",
         "postinstall": "cd data && npm install -d"
+    },
+    "dependencies": {
+        "express-basic-auth": "^1.1.5"
     }
 }
