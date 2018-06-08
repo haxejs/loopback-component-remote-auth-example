@@ -1,0 +1,22 @@
+{
+    "name": "accountService",
+    "base": "Model",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": false
+    },
+    "properties": {
+    },
+    "scope": {
+      "limit": 1000
+    },
+    "validations": [],
+    "relations": {
+    },
+    "acls": [
+    ],
+    "methods": {},
+    "mixins": {
+    }
+}
+  

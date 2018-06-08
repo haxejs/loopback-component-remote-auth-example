@@ -4,11 +4,31 @@
     "connector": "memory",
     "file": "auth/db.json"
   },
+
   "data-api": {
-        "baseURL": "http://localhost:3000/api",
-        "name": "data-api",
-        "connector": "rest",
-        "debug": true,
+    "baseURL": "http://localhost:3000/api",
+    "name": "data-api",
+    "connector": "rest",
+    "debug": true,
+    "options": {
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "auth": {
+          "user": "admin",
+          "pass": "supersecret",
+          "sendImmediately": true
+        },
+        "strictSSL": false
+    }
+  },
+
+  "account-api": {
+    "baseURL": "${ACCOUNT_SERVICE_BASEURL}",
+    "name": "account-api",
+    "connector": "rest",
+    "debug": true,
 		"options": {
 		    "headers": {
 		      "accept": "application/json",
@@ -20,6 +40,107 @@
     			"sendImmediately": true
   			},
 		    "strictSSL": false
-		}
+		},
+    "operations":[
+    {
+      "template": {
+        "method": "POST",
+        "url": "{!url}",
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "query": "{query}",
+        "body": "{body}"
+      },
+      "functions": {
+        "create": ["url", "body", "query"]
+      }
+    },
+    {
+      "template": {
+        "method": "PUT",
+        "url": "{!url}/{!id}",
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "query": "{query}",
+        "body": "{body}"
+      },
+      "functions": {
+        "update": ["url", "id", "body", "query"]
+      }
+    },
+    {
+      "template": {
+        "method": "DELETE",
+        "url": "{!url}/{!id}",
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "query": "{query}"
+      },
+      "functions": {
+        "delete": ["url", "id", "query"]
+      }
+    },
+    {
+      "template": {
+        "method": "DELETE",
+        "url": "{!url}",
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "query": "{query}"
+      },
+      "functions": {
+        "deleteAll": ["url", "query"]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "{!url}/{!id}",
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "query": "{query}"
+      },
+      "functions": {
+        "find": ["url", "id", "query"]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "{!url}",
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "query": "{query}"
+      },
+      "functions": {
+        "all": ["url", "query"]
+      }
+    },
+    {
+      "template": {
+        "method": "GET",
+        "url": "{!url}/count",
+        "headers": {
+          "accept": "application/json",
+          "content-type": "application/json"
+        },
+        "query": "{query}"
+      },
+      "functions": {
+        "count": ["url", "query"]
+      }
+    }]
   }
 }

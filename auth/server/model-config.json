@@ -36,5 +36,9 @@
   "Post": {
     "dataSource": "data-api",
     "public": true
+  },
+  "accountService": {
+    "dataSource": "account-api",
+    "public": false
   }
 }
